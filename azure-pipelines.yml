@@ -17,7 +17,7 @@ steps:
     targetType: 'inline'
     script: |
       # Write your commands here     
-      cat << EOF > rep/sample.html
+      cat << EOF > 'rep/sample.html'
       <html><h2>My Cstom Report</h2>
       </html> 
       EOF
