@@ -16,7 +16,8 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      # Write your commands here     
+      # Write your commands here    
+      mkdir rep 
       cat << EOF > 'rep/sample.html'
       <html><h2>My Cstom Report</h2>
       </html> 
