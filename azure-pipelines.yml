@@ -12,11 +12,19 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
-
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your commands here     
+      cat << EOF > rep/sample.html
+      <html><h2>My Cstom Report</h2>
+      </html> 
+      EOF
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 - task: PublishHtmlReport@1
   inputs:
-    reportDir: 'sample.html'
+    reportDir: 'rep/sample.html'
