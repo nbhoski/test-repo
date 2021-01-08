@@ -20,6 +20,7 @@ steps:
       mkdir rep 
       cat << EOF > 'rep/sample.html'
       <html><h2>My Cstom Report</h2>
+      <body bgcolor=silver> Testing HTML reports on azure</body>
       </html> 
       EOF
 - script: |
