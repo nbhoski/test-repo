@@ -47,7 +47,8 @@ steps:
       EOF
 - task: RunMATLABCommand@0
   inputs:
-    command: 'testHtml'
+    command: 'test/testHtml'
+
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
