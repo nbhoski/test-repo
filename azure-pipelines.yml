@@ -14,7 +14,7 @@ steps:
   displayName: 'Run a one-line script'
 - task: InstallMATLAB@0
   inputs:
-   release: R2019b  
+   release: R2020b  
 - task: Bash@3
   inputs:
     targetType: 'inline'
