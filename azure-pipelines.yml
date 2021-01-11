@@ -12,9 +12,7 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
-- task: 'InstallMATLAB@0'
-  inputs:
-    release: R2020a
+- task: InstallMATLAB@0
 
 - task: Bash@3
   inputs:
