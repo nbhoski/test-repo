@@ -12,7 +12,10 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
-  
+- task: 'InstallMATLAB@0'
+  inputs:
+    release: R2020a
+
 - task: Bash@3
   inputs:
     targetType: 'inline'
@@ -42,6 +45,9 @@ steps:
       runner.addPlugin(plugin);
       result = runner.run(suite);
       EOF
+- task: RunMATLABCommand@0
+  inputs:
+    command: 'testHtml'
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
