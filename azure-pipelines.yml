@@ -55,4 +55,4 @@ steps:
   displayName: 'Run a multi-line script'
 - task: PublishHtmlReport@1
   inputs:
-    reportDir: 'myHTMLFolder/sample.html'
+    reportDir: 'myHTMLFolder/index.html'
