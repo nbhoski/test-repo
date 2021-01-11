@@ -12,7 +12,7 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
-- task: MathWorks.matlab-azure-devops-extension-dev.InstallMATLAB.InstallMATLAB@0
+- task: InstallMATLAB@0
 - task: Bash@3
   inputs:
     targetType: 'inline'
