@@ -17,11 +17,29 @@ steps:
     targetType: 'inline'
     script: |
       # Write your commands here    
-      mkdir rep 
-      cat << EOF > 'rep/sample.html'
-      <html><h2>My Cstom Report</h2>
-      <body bgcolor=silver> Testing HTML reports on azure</body>
-      </html> 
+      mkdir test 
+      cat << EOF > 'test/tDemo.m'
+      classdef tDemo < matlab.unittest.TestCase
+        methods (Test)
+         function test1(testCase)
+            testCase.verifyEqual(testCase,5,5);
+         end
+         function test2(testCase)
+            testCase.verifyEqual(testCase,5,6);
+         end
+        end
+      end
+      EOF
+      cat << EOF > 'test/testHtml.m'
+      import matlab.unittest.TestRunner;
+      import matlab.unittest.TestSuite;
+      import matlab.unittest.plugins.TestReportPlugin;
+      suite = testsuite({'tDemo.m'});
+      runner = TestRunner.withNoPlugins;
+      htmlFolder = 'myHTMLFolder';
+      plugin = TestReportPlugin.producingHTML(htmlFolder);
+      runner.addPlugin(plugin);
+      result = runner.run(suite);
       EOF
 - script: |
     echo Add other tasks to build, test, and deploy your project.
@@ -29,4 +47,4 @@ steps:
   displayName: 'Run a multi-line script'
 - task: PublishHtmlReport@1
   inputs:
-    reportDir: 'rep/sample.html'
+    reportDir: 'myHTMLFolder/sample.html'
