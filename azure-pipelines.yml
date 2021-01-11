@@ -44,7 +44,7 @@ steps:
       EOF
 - task: RunMATLABCommand@0
   inputs:
-    command: 'test/testHtml'
+    command: 'cd test;testHtml'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
