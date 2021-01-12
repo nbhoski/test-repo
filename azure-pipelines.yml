@@ -53,3 +53,9 @@ steps:
 - task: PublishHtmlReport@1
   inputs:
     reportDir: 'test/myHTMLFolder/index.html'
+- task: CopyPublishBuildArtifacts@1
+  inputs:
+    CopyRoot: '$(Agent.BuildDirectory)'
+    Contents: 'test/myHTMLFolder'
+    ArtifactName: 'HTMl report'
+    ArtifactType: 'Container'
