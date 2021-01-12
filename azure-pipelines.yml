@@ -53,8 +53,8 @@ steps:
 - task: PublishHtmlReport@1
   inputs:
     reportDir: 'test/myHTMLFolder/index.html'
-- task: CopyPublishBuildArtifacts@1
+- task: PublishPipelineArtifact@1
   inputs:
-    Contents: 'test/myHTMLFolder'
-    ArtifactName: 'HTMl report'
-    ArtifactType: 'FilePath'
+    targetPath: '$(Pipeline.Workspace)/test/myHTMLFolder'
+    artifact: 'test report'
+    publishLocation: 'pipeline'
