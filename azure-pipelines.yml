@@ -51,4 +51,5 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 - task: PublishHtmlReport@1
-  inputs: 'test/myHTMLFolder/index.html'
+  inputs:
+    reportDir: 'test/myHTMLFolder/index.html'
