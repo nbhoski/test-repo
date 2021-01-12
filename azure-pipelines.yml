@@ -55,6 +55,6 @@ steps:
     reportDir: 'test/myHTMLFolder/index.html'
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: '$(Pipeline.Workspace)/test/myHTMLFolder'
+    targetPath: 'test/myHTMLFolder'
     artifact: 'test report'
     publishLocation: 'pipeline'
