@@ -50,6 +50,7 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
-- task: PublishHtmlReport@1
+- task: publishhtmlreport@1
   inputs:
-    reportDir: 'test/myHTMLFolder/index.html'
+    htmlType: 'genericHTML'
+    htmlPath: 'test/myHTMLFolder/index.html'
